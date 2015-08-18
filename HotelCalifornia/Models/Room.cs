@@ -8,13 +8,13 @@ namespace HotelCalifornia.Models
     public class Room
     {
 
-        public int roomID { get; set; }
+        public int RoomID { get; set; }
         public string type { get; set; }
         public decimal rate { get; set; }
 
         public Room()
         {
-            roomID = 0;
+            RoomID = 0;
             type = "";
             rate = 0.00M;
         }

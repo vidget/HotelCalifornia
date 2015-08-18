@@ -7,7 +7,7 @@ namespace HotelCalifornia.Models
 {
     public class Employee
     {
-        public int employeeID { get; set; }
+        public int EmployeeID { get; set; } 
         public DateTime hireDate { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
@@ -24,7 +24,7 @@ namespace HotelCalifornia.Models
         
             public Employee()
             {
-             employeeID = 0;
+             EmployeeID = 0;
              hireDate = DateTime.Parse("0000-00-00");
              firstName ="";
              lastName ="";

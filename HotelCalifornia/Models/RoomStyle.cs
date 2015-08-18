@@ -7,9 +7,9 @@ namespace HotelCalifornia.Models
 {
     public class RoomStyle
     {
-        public int styleID { get; set; }
-        public int customerID { get; set; }
-        public int roomID { get; set; }
+        public int StyleID { get; set; }
+        public int CustomerID { get; set; }
+        public int RoomID { get; set; }
         public int wallPicture { get; set; }
         public int lampType { get; set; }
         public int rugStyle { get; set; }
@@ -20,9 +20,9 @@ namespace HotelCalifornia.Models
 
         public RoomStyle()
         {
-            styleID = 0;
-            customerID = 0;
-            roomID = 0;
+            StyleID = 0;
+            CustomerID = 0;
+            RoomID = 0;
             wallPicture = 0;
             lampType = 0;
             rugStyle = 0;

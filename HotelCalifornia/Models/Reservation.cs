@@ -11,6 +11,7 @@ namespace HotelCalifornia.Models
         public int reservationNumberID   { get; set; }
         public int customerID { get; set; }
         public int roomID { get; set; }
+        public int roomNumber { get; set; }
         public DateTime dateBooked { get; set; }
         public DateTime dateCheckIn { get; set; }
         public DateTime dateCheckOut { get; set; }
@@ -24,6 +25,7 @@ namespace HotelCalifornia.Models
             reservationNumberID = 0;
             customerID = 0;
             roomID = 0;
+            roomNumber =0;
             dateBooked = DateTime.Parse("0000-00-00");
             dateCheckIn = DateTime.Parse("0000-00-00");
             dateCheckOut = DateTime.Parse("0000-00-00");

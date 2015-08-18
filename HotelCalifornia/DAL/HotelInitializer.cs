@@ -20,7 +20,7 @@ namespace HotelCalifornia.DAL
             {
                 new Employee
                 {
-                    employeeID = 1 ,
+                    EmployeeID = 1 ,
                     hireDate=DateTime.Parse("2005-09-01"),
                     firstName="Carson",
                     lastName="Alexander",
@@ -38,7 +38,7 @@ namespace HotelCalifornia.DAL
    
                 new Employee
                 {
-                    employeeID = 2 ,
+                    EmployeeID = 2 ,
                     hireDate=DateTime.Parse("2001-10-07"),
                     firstName="Butch",
                     lastName="Randolph",
@@ -55,7 +55,7 @@ namespace HotelCalifornia.DAL
             
                  new Employee
                 {
-                    employeeID = 3 ,
+                    EmployeeID = 3 ,
                     hireDate=DateTime.Parse("1999-08-01"),
                     firstName="Tom",
                     lastName="Jones",
@@ -72,7 +72,7 @@ namespace HotelCalifornia.DAL
 
                  new Employee
                 {
-                    employeeID = 4 ,
+                    EmployeeID = 4 ,
                     hireDate=DateTime.Parse("1998-13-08"),
                     firstName="Elvis",
                     lastName="Jones",
@@ -99,7 +99,7 @@ namespace HotelCalifornia.DAL
             {
                 new Customer
                 {
-                    customerID = 1 ,
+                   CustomerID = 1 ,
                     firstName="John",
                     lastName="Stark",
                     address="21345 Beech", 
@@ -113,7 +113,7 @@ namespace HotelCalifornia.DAL
 
                 new Customer
                 {
-                    customerID = 2 ,
+                    CustomerID = 2 ,
                     firstName="Sally",
                     lastName="Wayneright",
                     address="2445 Allen Rd", 
@@ -127,7 +127,7 @@ namespace HotelCalifornia.DAL
 
                 new Customer
                 {
-                    customerID = 3 ,
+                    CustomerID = 3 ,
                     firstName="Brandy",
                     lastName="Johnson",
                     address="21345 Hubbard", 
@@ -141,7 +141,7 @@ namespace HotelCalifornia.DAL
 
                 new Customer
                 {
-                    customerID = 4 ,
+                    CustomerID = 4 ,
                     firstName="Stu",
                     lastName="Salamander",
                     address="245 Ellerude Rd", 
@@ -168,46 +168,90 @@ namespace HotelCalifornia.DAL
             { 
                 new Room
                 {
-                     roomID = 1,
+                     RoomID = 1,
                      type = "Penthouse",
                      rate = 400.00M
                 },
 
                  new Room
                 {
-                     roomID = 2,
+                     RoomID = 2,
                      type = "Suite",
                      rate = 300.00M
                 },
 
                 new Room
                 {
-                     roomID = 3,
+                     RoomID = 3,
                      type = "King",
                      rate = 200.00M
                 },
 
                  new Room
                 {
-                     roomID = 4,
+                     RoomID = 4,
                      type = "Double",
                      rate = 150.00M
                 },
                  new Room
                 {
-                     roomID = 4,
+                     RoomID = 4,
                      type = "Single",
                      rate = 100.00M
                 }
-            
-            
+      
             };
 
             room.ForEach(s => context.Rooms.Add(s));
             context.SaveChanges();
 
+            //Roomstyle Model:
+            //StyleID,CustomerID,RoomID,wallPicture,lampType,rugStyle,drapeStyle,wallColor,beddingStyle
+
+            var roomstyle = new List<RoomStyle>
+            {
+
+                new RoomStyle
+                {
+                    StyleID=1,
+                    CustomerID=3,
+                    RoomID=2,
+                    wallPicture=1,
+                    lampType=2,
+                    rugStyle=1,
+                    drapeStyle=4,
+                    wallColor=3,
+                    beddingStyle=3
+
+                },
+
+                new RoomStyle
+                {
+                    StyleID=2,
+                    CustomerID=1,
+                    RoomID=3,
+                    wallPicture=2,
+                    lampType=4,
+                    rugStyle=3,
+                    drapeStyle=4,
+                    wallColor=3,
+                    beddingStyle=2
+
+                }
+
+
+
+            };
+
+            roomstyle.ForEach(s => context.RoomStyles.Add(s));
+            context.SaveChanges();
+
+
+
+
+
             //Reservation MODEL:
-            //reservationNumberID,customerID,roomID,dateBooked,dateCheckIn,dateCheckOut,employeeID,cost,discountRate
+            //reservationNumberID,customerID,roomID,roomNumber,dateBooked,dateCheckIn,dateCheckOut,employeeID,cost,discountRate
 
 
 
@@ -218,6 +262,7 @@ namespace HotelCalifornia.DAL
                 reservationNumberID=1,
                 customerID=2,
                 roomID =2,
+                roomNumber =212,
                 dateBooked =DateTime.Parse("2015-13-08"),
                 dateCheckIn =DateTime.Parse("2015-15-08"),
                 dateCheckOut =DateTime.Parse("2015-17-08"),
@@ -231,6 +276,7 @@ namespace HotelCalifornia.DAL
                 reservationNumberID=2,
                 customerID=1,
                 roomID =1,
+                roomNumber =272,
                 dateBooked =DateTime.Parse("2015-13-08"),
                 dateCheckIn =DateTime.Parse("2015-15-08"),
                 dateCheckOut =DateTime.Parse("2015-19-08"),
@@ -239,11 +285,10 @@ namespace HotelCalifornia.DAL
                 discountRate = 0.15M
                 }
 
-
-
             };
 
-
+            reservation.ForEach(s => context.Reservations.Add(s));
+            context.SaveChanges();
 
         }
         

@@ -7,7 +7,7 @@ namespace HotelCalifornia.Models
 {
     public class Customer
     {
-        public int customerID { get; set; }
+        public int CustomerID { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string address { get; set; }
@@ -20,7 +20,7 @@ namespace HotelCalifornia.Models
         
         public Customer()
         {
-            customerID = 0;
+            CustomerID = 0;
             firstName = "";
             lastName = "";
             address = "";
